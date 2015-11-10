@@ -1,0 +1,10 @@
+$(call inherit-product, device/motorola/condor/full_condor.mk)
+
+# stayboogy stuff.
+$(call inherit-product, vendor/stayboogy.mk)
+
+## Device identifier. This must come after all inclusions
+PRODUCT_NAME := stayboogy_condor
+PRODUCT_RELEASE_NAME := MOTO E
+
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
