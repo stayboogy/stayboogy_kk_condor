@@ -1,0 +1,15 @@
+#!/system/bin/sh
+
+if [ -e /data/local/uinitlog.txt ];then
+rm /data/local/uinitlog.txt
+fi
+SCRIPTLOG=/data/local/uinitlog.txt
+touch $SCRIPTLOG
+echo "$(date) Log Created..." >> $SCRIPTLOG
+if [ -e /system/etc/init.d ];then
+for i in /system/etc/init.d/* ; do
+echo "$(date) $i Started.." >> $SCRIPTLOG
+$i 2>>$SCRIPTLOG
+echo "$(date) $i Finished.." >> $SCRIPTLOG
+done
+fi

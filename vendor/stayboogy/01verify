@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+if [ -e /data/local/stayboogy.txt ];then
+rm /data/local/stayboogy.txt
+fi
+STAYBOOGY=/data/local/stayboogy.txt
+touch $STAYBOOGY
+echo "stayboogy did it again!" >> $STAYBOOGY
